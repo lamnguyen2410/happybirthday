@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc mừng sinh nhật em!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; padding:0; background:linear-gradient(to right,#fff0f5,#ffe0e5); font-family:'Quicksand',sans-serif; overflow:hidden; text-align:center; color:#333; }
+    h1 { font-family:'Pacifico',cursive; font-size:3em; color:#ff6f91; margin-top:60px;}
+    img { width:250px; border-radius:20px; box-shadow:0 4px 12px rgba(0,0,0,0.2); margin-top:20px; }
+    .message-box { background:rgba(255,255,255,0.85); border-radius:20px; padding:25px; margin:30px auto; max-width:600px; font-size:18px; }
+    .heart { width:10px; height:10px; background:red; position:absolute; animation:float 6s infinite ease-in; transform:rotate(45deg); }
+    .heart::before, .heart::after { content:""; width:10px; height:10px; background:red; border-radius:50%; position:absolute; }
+    .heart::before{ top:-5px; left:0; }
+    .heart::after{ left:-5px; top:0; }
+    @keyframes float { 0%{transform:translateY(0) rotate(45deg);opacity:1;} 100%{transform:translateY(-800px) rotate(45deg);opacity:0;} }
+  </style>
+</head>
+<body>
+  <h1>🎉 Chúc mừng sinh nhật em yêu 🎂</h1>
+  <img src="your-couple-photo.jpg" alt="Ảnh đôi của tụi mình">
+  <div class="message-box">
+    <p>Anh xin lỗi vì đã quên ngày đặc biệt này...</p>
+    <p>Dù hơi muộn, nhưng anh muốn chúc em tuổi mới thật xinh đẹp, mạnh khoẻ và luôn vui vẻ 🥰</p>
+    <p><strong>Anh yêu em rất nhiều. Em tha lỗi cho anh nha 🥹</strong></p>
+  </div>
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random()*100 + "vw";
+      heart.style.animationDuration = 2 + Math.random()*4 + "s";
+      document.body.appendChild(heart);
+      setTimeout(()=>heart.remove(),6000);
+    }
+    setInterval(createHeart,200);
+  </script>
+</body>
+</html>
